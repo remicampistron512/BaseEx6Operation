@@ -9,6 +9,9 @@ public class Operation {
 		System.out.println(div(5,0));
 		
 		triangle();
+		
+		int [] intArray = {78, 6,-250, 2, 12, 9};
+		System.out.println(getSumTwoHighestNumbers(intArray));
 	}
 	
 	public static int add(int a,int b) {
@@ -52,5 +55,20 @@ public class Operation {
 			System.out.println("");
 		}
 		
+	}
+	
+	public static int getSumTwoHighestNumbers(int [] intArray){
+		int firstHighestNumber = 0;
+		int secondHighestNumber = 0;
+		for (int i=0;i<intArray.length;i++) {
+			if(intArray[i]>=firstHighestNumber) {
+				
+				secondHighestNumber = firstHighestNumber;	
+				firstHighestNumber = intArray[i];
+			} else if (intArray[i]>=secondHighestNumber) {
+				secondHighestNumber = intArray[i]; ;
+			}
+		}
+		return firstHighestNumber + secondHighestNumber ;
 	}
 }
